@@ -1,0 +1,288 @@
+.manage-doctors-page {
+  display: flex;
+  background-color: #45b2eb;
+  flex-direction: row;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+}
+.manage-doctors {
+  width: 100%;
+  max-width: 1200px;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #45b2eb;
+  border-radius: 10px;
+}
+
+/* Title */
+.manage-doctors h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Search and Filter Container */
+.manage-doctors .filters {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+.manage-doctors input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  max-width: 100%;
+  transition: border 0.3s ease;
+}
+
+.manage-doctors input[type="text"]:focus {
+  border-color: #4caf50; /* Highlight the border on focus */
+}
+
+/* Specialization Filter Dropdown */
+.manage-doctors select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  width: 200px;
+  max-width: 100%;
+}
+
+/* Grid Layout for Doctor Cards */
+.doctor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Pagination Styling */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.overlay-doctor-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.doctor-details-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  z-index: 1000;
+}
+
+.doctor-details-modal h2 {
+  margin-bottom: 20px;
+}
+
+.doctor-details-modal ul {
+  list-style: none;
+  padding: 0;
+}
+
+.doctor-details-modal li {
+  margin-bottom: 10px;
+}
+
+.modal-close-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  background: #0056b3;
+}
+.overlay-appointments-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.appointments-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  z-index: 1001;
+}
+
+.appointments-modal h2 {
+  margin-bottom: 20px;
+}
+
+.appointments-modal ul {
+  list-style: none;
+  padding: 0;
+}
+
+.appointments-modal li {
+  margin-bottom: 10px;
+}
+
+.admins-doctors-appointments-modal-close-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  background: #0056b3;
+}
+.edit-doctor-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.edit-doctor-modal label {
+  display: block;
+  margin: 10px 0;
+}
+.edit-doctor-modal input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.edit-doctor-modal button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.edit-doctor-modal button:hover {
+  background-color: #0056b3;
+}
+/* Overlay for modal */
+.overlay-delete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.delete-modal {
+  background-color: #fff; /* White background for the modal */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px; /* Spacing inside the modal */
+  max-width: 400px; /* Limit width */
+  width: 90%; /* Responsive width */
+  text-align: center; /* Center align text */
+  animation: fadeIn 0.3s ease-in-out; /* Optional fade-in animation */
+}
+
+/* Fade-in animation for the modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Modal text */
+.delete-modal p {
+  font-size: 16px; /* Adjust font size */
+  margin-bottom: 20px; /* Space below text */
+  color: #333; /* Neutral text color */
+}
+
+/* Buttons in the modal */
+.delete-modal button {
+  padding: 10px 20px; /* Button padding */
+  margin: 0 10px; /* Space between buttons */
+  border: none; /* Remove borders */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Font size for buttons */
+  cursor: pointer; /* Pointer cursor for buttons */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Confirm delete button */
+.delete-modal button:first-of-type {
+  background-color: #ff4d4f; /* Red for delete */
+  color: #fff; /* White text */
+}
+
+.delete-modal button:first-of-type:hover {
+  background-color: #e04447; /* Darker red on hover */
+}
+
+/* Cancel button */
+.delete-modal button:last-of-type {
+  background-color: #f0f0f0; /* Neutral background for cancel */
+  color: #333; /* Neutral text */
+}
+
+.delete-modal button:last-of-type:hover {
+  background-color: #ddd; /* Slightly darker on hover */
+}
